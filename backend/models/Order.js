@@ -1,8 +1,9 @@
 import mongoose from 'mongoose';
 
-// TotalOrderCard (Month / Year toggle + sparkline) ka data
+// Dashboard ka TotalOrderCard + Orders page dono isi se chalte hain
 const orderSchema = new mongoose.Schema(
   {
+    customer: { type: String, trim: true, default: '' },
     amount: { type: Number, required: [true, 'Amount zaroori hai'], min: 0 },
     status: {
       type: String,

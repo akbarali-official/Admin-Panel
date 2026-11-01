@@ -26,7 +26,9 @@ export const register = asyncHandler(async (req, res) => {
     throw new Error('Is email se user pehle se maujood hai');
   }
 
-  const user = await User.create({ name, email, password });
+  // Database mein pehla user ho to wo admin banta hai, baaki sab normal user
+  const isFirstUser = (await User.countDocuments()) === 0;
+  const user = await User.create({ name, email, password, role: isFirstUser ? 'admin' : 'user' });
   sendUser(res, user, 201);
 });
 

@@ -12,6 +12,17 @@ import orderRoutes from './routes/orderRoutes.js';
 import incomeRoutes from './routes/incomeRoutes.js';
 import growthRoutes from './routes/growthRoutes.js';
 import stockRoutes from './routes/stockRoutes.js';
+import userRoutes from './routes/userRoutes.js';
+import customerRoutes from './routes/customerRoutes.js';
+import invoiceRoutes from './routes/invoiceRoutes.js';
+import productRoutes from './routes/productRoutes.js';
+import postRoutes from './routes/postRoutes.js';
+import taskRoutes from './routes/taskRoutes.js';
+import eventRoutes from './routes/eventRoutes.js';
+import chatRoutes from './routes/chatRoutes.js';
+import mailRoutes from './routes/mailRoutes.js';
+import contactRoutes from './routes/contactRoutes.js';
+import analyticsRoutes from './routes/analyticsRoutes.js';
 
 // .env file ki values load karo (sab se pehle)
 dotenv.config();
@@ -39,6 +50,17 @@ app.use('/api/orders', orderRoutes);
 app.use('/api/income', incomeRoutes);
 app.use('/api/growth', growthRoutes);
 app.use('/api/stocks', stockRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/customers', customerRoutes);
+app.use('/api/invoices', invoiceRoutes);
+app.use('/api/products', productRoutes);
+app.use('/api/posts', postRoutes);
+app.use('/api/tasks', taskRoutes);
+app.use('/api/events', eventRoutes);
+app.use('/api/chat', chatRoutes);
+app.use('/api/mails', mailRoutes);
+app.use('/api/contact-messages', contactRoutes);
+app.use('/api/analytics', analyticsRoutes);
 
 // Error handlers hamesha sab se last mein
 app.use(notFound);
